@@ -1,0 +1,6 @@
+#!/bin/sh
+
+JAVA=java
+CLASSPATH=".:lib/*"
+
+${JAVA} -cp ${CLASSPATH} Bril2jb "$@"
