@@ -56,11 +56,12 @@ there is no boolean type in JVM, so all `bool` variables are `int`(32-bit intege
 3. The hardest part of this project, in my opinion, is translating `print`. 
 The `print` instruction is translated as `java.lang.System.println`, 
 and all arguments are converted to `String` then concatenated. 
-So we need to invoke the built-in concatenation function (`java.lang.invoke.StringConcatFactory.makeConcatWithConstants​`) first,
+So before invoking the print function, we need to invoke the built-in concatenation function (`java.lang.invoke.StringConcatFactory.makeConcatWithConstants​`) first,
 this process involves dynamic method invocation in Java, 
 which requires a static Bootstrap Method to create it dynamically and 
-therefore supports dynamic descriptors and arguments 
+therefore supports dynamic descriptors and arguments formatter 
 ([further reading](https://www.guardsquare.com/en/blog/string-concatenation-java-9-untangling-invokedynamic)).
+We need to generate a descriptor and formatter for each usage of `print`.
 
 ### Evaluation
 We assume all programs are valid bril programs.
