@@ -1,0 +1,116 @@
+{
+  "functions": [
+    {
+      "instrs": [
+        {
+          "dest": "a",
+          "op": "const",
+          "type": "int",
+          "value": 2341234
+        },
+        {
+          "dest": "b",
+          "op": "const",
+          "type": "int",
+          "value": 653266234
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "loop"
+        },
+        {
+          "args": [
+            "b",
+            "zero"
+          ],
+          "dest": "cond",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "cond",
+            "final",
+            "here"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "here"
+        },
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "dest": "c",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "c",
+            "b"
+          ],
+          "dest": "c",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "a",
+            "c"
+          ],
+          "dest": "c",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "dest": "a",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "args": [
+            "c"
+          ],
+          "dest": "b",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "op": "print"
+        },
+        {
+          "args": [
+            "loop"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "final"
+        },
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "op": "print"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

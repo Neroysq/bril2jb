@@ -1,0 +1,18 @@
+main {
+    a: int = const 2341234;
+    b: int = const 653266234;
+    zero: int = const 0;
+loop:
+    cond: bool = eq b zero;
+    br cond final here;
+here:
+    c: int = div a b;
+    c: int = mul c b;
+    c: int = sub a c;
+    a: int = id b;
+    b: int = id c;
+    print a b;
+    jmp loop;
+final:
+    print a b;
+}

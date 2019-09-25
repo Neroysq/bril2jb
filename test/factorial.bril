@@ -1,0 +1,17 @@
+main {
+   n:int = const 20;
+   r:int = const 1;
+   i:int = const 1;
+   one:int = const 1;
+
+   start:
+   cmp:bool = le i n;
+   br cmp here there;
+   here:
+   r:int = mul r i;
+   i:int = add i one;
+   jmp start;
+   there:
+   print r;
+   ret;
+}
