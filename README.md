@@ -2,6 +2,7 @@
 A tool to translate bril code to Java Bytecode
 ## prerequisite
 * openjdk 10.0.2
+* the libraries listed in `lib`
 ## usage
 ```make``` to compile the tool.
 
