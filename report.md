@@ -181,7 +181,7 @@ The step (1) is interesting, because
 the way Java compiler deals with static `String` concatenation changed significantly.
 In Java 8 or earlier, 
 the compiler leverages class `StringBuilder`,
-it converts arguments to `String's and appends them to `StringBuilder` one by one,
+it converts arguments to `String`s and appends them to `StringBuilder` one by one,
 while since Java 9, 
 the compiler simply pushes all arguments into the stack
 and call a _dynamic method_ `java.lang.invoke.StringConcatFactory.makeConcatWithConstants​`.
@@ -203,7 +203,7 @@ generate the corresponding descriptor and formatter.
 
 
 ### Implementation
-This tool is implemented in Java. It translates Bril code (in JSON format) to 
+[This tool](https://github.com/Neroysq/bril2jb) is implemented in Java. It translates Bril code (in JSON format) to 
 a same-name Java class file, which can run on the JVM. 
 
 To use this tool, specify the Bril source file (in JSON format) and output path, 
