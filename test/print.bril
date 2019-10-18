@@ -1,0 +1,5 @@
+main {
+    a: int = const 1;
+    b: bool = const false;
+    print a b;
+}

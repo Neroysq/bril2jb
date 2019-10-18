@@ -1,0 +1,23 @@
+main {
+    a: int = const 2341234;
+    b: int = const 653266234;
+    zero: int = const 0;
+loop:
+    cond: bool = gt b zero;
+    br cond final here;
+here:
+    smaller : bool = lt b a;
+    br smaller final continue;
+continue:
+    c: int = sub b a;
+    log1: bool ge c a;
+    log2: bool gt a c;
+    log1: bool not log1;
+    log2: bool and log1 log2;
+    log2: bool or log1 log2;
+    b: int = id c;
+    print a b;
+    branch log2 loop final;
+final:
+    print a b;
+}

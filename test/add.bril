@@ -1,0 +1,5 @@
+main {
+    a:int = const 1;
+    b:int = const 2;
+    c:int = add a b;
+}
